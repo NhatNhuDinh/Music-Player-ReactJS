@@ -1,0 +1,82 @@
+
+/* CONTROL BAR */
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 0 8px;
+}
+.control .btn {
+  color: var(--text-secondary);
+  padding: 12px;
+  font-size: 20px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform .2s ease, color .2s ease, background-color .2s ease;
+}
+.control .btn:hover {
+  color: var(--text-primary);
+  transform: scale(1.08);
+  background-color: rgba(255,255,255,0.06);
+}
+.control .btn.active { color: var(--primary-color); }
+
+.control .btn-toggle-play {
+  width: 64px;
+  height: 64px;
+  font-size: 26px;
+  color: var(--bg-dark);
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  box-shadow: 0 10px 26px rgba(29,185,84,0.35);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease, color .2s ease;
+}
+.control .btn-toggle-play:hover {
+  transform: scale(1.06);
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  box-shadow: 0 14px 34px rgba(29,185,84,0.55);
+}
+
+
+/* PROGRESS */
+.progress {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 4px;
+  background: #3a3a3a;
+  outline: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: height .15s ease;
+}
+.progress:hover { height: 6px; }
+.progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  background-color: var(--text-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+.progress:hover::-webkit-slider-thumb { opacity: 1; }
+.progress::-moz-range-thumb {
+  width: 12px; height: 12px;
+  background-color: var(--text-primary);
+  border: none; border-radius: 50%;
+  opacity: 0; transition: opacity .15s ease;
+}
+.progress:hover::-moz-range-thumb { opacity: 1; }
+
+/* PLAY/PAUSE state icons */
+.control .icon-pause { display: none; }
+.control.playing .icon-pause { display: inline-block; }
+.control.playing .icon-play { display: none; }
